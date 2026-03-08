@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-primary font-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glow-blue {
+    box-shadow: 0 0 15px -3px rgba(0, 209, 255, 0.4);
+  }
+  .glow-violet {
+    box-shadow: 0 0 15px -3px rgba(139, 92, 246, 0.4);
+  }
+  .panel-frame {
+    @apply border border-signal bg-surface relative;
+  }
+  .panel-frame::before {
+    content: '';
+    @apply absolute top-0 left-0 w-2 h-2 border-t border-l border-accent-blue opacity-50;
+  }
+  .panel-frame::after {
+    content: '';
+    @apply absolute bottom-0 right-0 w-2 h-2 border-b border-r border-accent-blue opacity-50;
+  }
+}
